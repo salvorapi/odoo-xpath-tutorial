@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <template id="index" name="xpath_index">
+      <t t-call="web.layout">
+        <h1>Hello, Xpath!</h1>
+      </t>
+    </template>
+    <template id="index_inherit" inherit_id="index" name="inherith">
+      <xpath expr="//h1" position="attributes">
+        <!-- Importante è il nome dell'attributo -->
+        <attribute name="style" add="color:red" />
+      </xpath>
+    </template>
+  </data>
+</odoo>
