@@ -1,8 +1,15 @@
 <odoo>
   <data>
     <template id="index" name="xpath_index">
-      <t t-call="web.layout">
+      <t t-call="web.basic_layout">
         <h1>Hello, Xpath!</h1>
+        <!-- <div id="moveme" class="border border-danger mb-1" style="width: 100px; height:25px;">
+        MOVE ME!
+        </div> -->
+        <div id="mybox" style="width: 400px; height:100px;" class="mb-1 mt-1 text-center border border-info">
+          id="MYBOX"
+        </div>
+        
       </t>
     </template>
     <template id="index_inherit" inherit_id="index" name="inherith">
@@ -10,6 +17,29 @@
         <!-- Importante è il nome dell'attributo -->
         <attribute name="style" add="color:red" />
       </xpath>
+      <!-- Seconda parte articolo -->
+      <xpath expr="//h1" position="replace">
+        <h1>Hello, Odoo with Xpath</h1>
+      </xpath>
+      <xpath expr="//div[@id='mybox']" position="before">
+        <div style="width: 300px; height:25px; border:1px solid orange;" class="text-center">
+        BEFORE
+        </div>
+      </xpath>
+      <xpath expr="//div[@id='mybox']" position="after">
+        <div style="width: 300px; height:25px; border:1px solid purple;" class="text-center">
+        AFTER
+        </div>
+      </xpath>
+      <xpath expr="//div[@id='mybox']" position="inside">
+        <div style="width: 300px; height:25px; border:1px solid lightgreen;margin-left:10px;">
+        INSIDE
+        </div>
+      </xpath>
+      <!-- </xpath>
+      <xpath expr="//div[@id='mybox']" position="inside">
+        <xpath expr="//div[@id='moveme']" position="move" />
+      </xpath> -->
     </template>
   </data>
 </odoo>
